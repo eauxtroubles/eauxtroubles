@@ -1,0 +1,147 @@
+#header{
+	background-color: #1a1a1a;
+	height: 60px;
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    z-index: 2;
+    margin-right: 0%;
+}
+
+nav {
+    display: flex;
+    align-items: center;    
+} 
+
+#menu {
+    display: flex;      
+    gap: 20px;      
+}
+
+nav ul li{
+	display: inline-block;
+	list-style-type: none;
+	padding: 20px;
+	font-size: 20px;
+    color: #fff;
+    font-family: sans-serif;
+}
+
+nav ul li a{
+	color: #FFF;
+    
+	text-decoration: none;
+	letter-spacing: 0.1rem;
+}
+
+
+
+form {
+    margin-left: 20px;
+}
+
+#audio-icon{
+    width: 40px;
+    height: auto;
+}
+
+body{
+    margin: 0;
+    height: 100vh;
+    background-color:#1a1a1a /*#807d7d;*/;
+}
+
+
+#top
+{
+    margin-top: 6%;
+    margin-bottom: 0%;
+}
+
+#title
+{
+    font-family: serif;
+    text-align: center;
+    font-size: 40px;
+    color:  #f2f2f2;
+}
+
+
+
+.center_img{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    width: 200px;
+    margin: 0 auto;
+}
+
+form {
+    margin: 0;
+}
+
+#start, select,option {
+    width: 150px; 
+    height: 30px;
+    font-size: 15px;
+    text-align: center;
+    background-color: #333333;
+    border-style: solid;
+    border-color:black;
+}
+
+
+.overlay-buttons{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; 
+    margin-top: 0%;
+    margin-bottom: 2%;
+    /*height: 100vh;*/
+}
+
+.tw,.tags{
+    color: #f9f2ec;
+    flex-direction: column;
+    font-family: serif;
+    text-align: center;
+}
+
+#cover
+{
+    width:  500; 
+    height: auto; /*550 px maintains ratio*/
+}
+
+
+footer {
+	background-color: #242424;
+	color: #FFF;
+	margin: 10px;
+	text-align: center;
+}

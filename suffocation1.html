@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Eaux Troubles</title>
+        <link rel="stylesheet" href="suffocation1_style.css">
+        <link rel="shortcut icon" type="image/x-icon" href="imgs/favicon2.ico" />
+        <script src="audio_suff.js" defer></script>
+    </head>
+
+    <body>
+        <div id="header">
+            <nav>
+            <div id="audio-container"><img src="imgs/noSound_new.png" id="audio-icon"></div>
+            <ul id="menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="about.html">À propos d'Eaux Troubles</a></li>
+                <li><a href="support.html">Soutenir le projet</a></li>
+            </ul>
+            <audio hidden loop>
+                <source src="audio/menu theme __.mp3">
+            </audio>
+            </nav>
+        </div>
+
+        <div id="main-container">
+            <div class="title">
+                <h2>Suffocation</h2>
+            </div>
+            <div class="para">
+                <div class="img-container">
+                    <img src="imgs/suff_1v9.png" class="img">
+                </div>
+                <div class="text">
+                    <p>J’étais debout au milieu de ma chambre, seul. Il faisait nuit et à nouveau s’installait
+                        cette sensation étouffante. Lourde et froide. Elle envahissait la pièce et s’infiltrait
+                        partout, que ce soit dans l’air ambiant ou mon corps, jusque dans mes propres
+                        pensées.</p>
+                </div>
+            </div>
+            <div class="para">
+                <!--<div class="img-container">
+                    <img src="imgs/suff_2v14.png" class="img">
+                </div>-->
+                <div class="text">
+                    <p>Je n’arrive pas à décrire précisément le trouble qui m’affecte. Mes pensées sont tellement désordonnées. Je ne comprends rien. Je ne distingue rien, mais je sens que quelque chose me ronge de l’intérieur.</p>
+                    <p>Je dirais que la maladie a pris naissance dans mon estomac, à moins que ce ne soit dans mon cœur. Quoiqu’il en soit, elle s’est ensuite propagé jusque mes poumons et mes muscles, avant d’atteindre et d’affaiblir mon organisme tout entier.</p>
+                </div>
+            </div>
+            <div class="para">
+                <div class="img-container">
+                    <img src="imgs/suff_3v3.png" class="img">
+                </div>
+                <div class="text">
+                    <p>Je me retrouvai allongé sur mon lit, les bras étendus de chaque côté de mon corps. Des
+                        larmes que j’avais pu retenir jusqu’ici ruisselaient en se refroidissant sur mes joues. Le
+                        mal avait encore gagné en intensité sans que je sache pourquoi. 
+                        <br>La simple pensée de mon visage laid déformé par une douleur injustifiée m’inspire le dégoût, pourtant, plus
+                        je m’efforce de la chasser, plus elle se renforce. Mon propre corps est devenu mon
+                        ennemi.</p><br><br>
+                </div>
+            </div>
+
+            <div class="choice">
+                <h4 style="font-weight: bolder; font-size: 20px;">Pourquoi est-ce que je pleure ?</h4>
+                <form id="emotionForm">
+                    <input type="radio" id="amertume" name="emotion" value="amertume">
+                    <label for="amertume">AMERTUME</label>
+                    <input type="radio" id="frustration" name="emotion" value="frustration">
+                    <label for="frustration">FRUSTRATION</label>
+                    <input type="radio" id="colere" name="emotion" value="colere">
+                    <label for="colere">COLERE</label>
+                    <input type="radio" id="peur" name="emotion" value="peur">
+                    <label for="peur">PEUR</label>
+                    <input type="button" value="Entrer" onclick="redirectToPage()">
+                </form>
+            </div>
+        </div>
+
+        <script>
+            function redirectToPage() {
+                // Récupère le formulaire et les options sélectionnées
+                const form = document.getElementById("emotionForm");
+                const selectedEmotion = form.elements["emotion"].value;
+            
+                // Détermine la page de redirection
+                let targetPage;
+                switch (selectedEmotion) {
+                    case "amertume":
+                        targetPage = "amertume.html";
+                        break;
+                    case "frustration":
+                        targetPage = "frustration.html";
+                        break;
+                    case "colere":
+                        targetPage = "colere.html";
+                        break;
+                    case "peur":
+                        targetPage = "peur.html";
+                        break;
+                    default:
+                        alert("Veuillez sélectionner une émotion.");
+                        return;
+                }
+            
+                // Redirige vers la page correspondante
+                window.location.href = targetPage;
+            }
+        </script>
+
+
+        <footer>
+            <div >
+                <p class="para_footer">Copyright &copy; Eaux Troubles - 2024 - All Rights reserved</p>
+            </div>
+        </footer>
+    
+    </body>
+</html>

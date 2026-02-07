@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Eaux Troubles</title>
+        <link rel="stylesheet" href="suffocation1_style.css">
+        <link rel="shortcut icon" type="image/x-icon" href="imgs/favicon2.ico" />
+        <script src="audio_suff.js" defer></script>
+    </head>
+
+    <body>
+        <div id="header">
+            <nav>
+            <div id="audio-container"><img src="imgs/noSound_new.png" id="audio-icon"></div>
+            <ul id="menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="about.html">À propos d'Eaux Troubles</a></li>
+                <li><a href="support.html">Soutenir le projet</a></li>
+            </ul>
+            <audio hidden loop>
+                <source src="audio/menu theme __.mp3">
+            </audio>
+            </nav>
+        </div>
+
+        <div id="main-container">
+            <div class="para">
+                <div class="img-container">
+                    <!--<img src="imgs/colere_v3.png" class="img">-->
+                    <p><em>[IMAGE]</em></p>
+                </div>
+                <div class="text">
+                    <p>Des larmes de colère ? Qui se soucie de ma colère ?</p>
+                    <p>C’est sans doute à force de la refouler qu’elle a dû se retourner contre moi. C’est mieux
+                        ainsi.</p><br>
+                </div>
+            </div>
+            <input type="button" value="Dormir." onclick="redirectToPage()">
+            <script>
+                function redirectToPage() {
+                    window.location.href = "reve1.html";
+                }
+            </script>
+        </div>
+
+        <footer>
+            <div >
+                <p class="para_footer">Copyright &copy; Eaux Troubles - 2024 - All Rights reserved</p>
+            </div>
+        </footer>
+    </body>
+</html>

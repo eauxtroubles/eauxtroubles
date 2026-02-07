@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Eaux Troubles</title>
+        <link rel="stylesheet" href="suffocation1_style.css">
+        <link rel="shortcut icon" type="image/x-icon" href="imgs/favicon2.ico" />
+        <script src="audio_suff.js" defer></script>
+    </head>
+
+    <body>
+        <div id="header">
+            <nav>
+            <div id="audio-container"><img src="imgs/noSound_new.png" id="audio-icon"></div>
+            <ul id="menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="about.html">À propos d'Eaux Troubles</a></li>
+                <li><a href="support.html">Soutenir le projet</a></li>
+            </ul>
+            <audio hidden loop>
+                <source src="audio/menu theme __.mp3">
+            </audio>
+            </nav>
+        </div>
+
+        <div id="main-container">
+            <div class="para">
+                <div class="img-container">
+                    <!--<img src="imgs/ET-img1_draft.jpg" class="img">-->
+                    <p><em>[IMAGE]</em></p>
+                </div>
+                <div class="text">
+                    <p>Je pensais qu’après tous ces efforts, après avoir atteint la lumière, je deviendrais enfin la
+                        personne que j’aurais du être depuis tout ce temps…</p>
+                </div>
+            </div>
+
+            <div class="para">
+                <div class="img-container">
+                    <!--<img src="imgs/ET-img1_draft.jpg" class="img">-->
+                    <p><em>[IMAGE]</em></p>
+                </div>
+
+                <div class="text">
+                    <p>…Mais je n’arrive pas à dépasser le seuil de la porte.</p>
+                    <p>Si je veux me libérer de cette créature, il va falloir que je trouve de l’aide.</p>
+                </div>
+            </div>
+
+            <div class="para">
+                <div class="img-container">
+                    <!--<img src="imgs/ET-img1_draft.jpg" class="img">-->
+                    <p><em>[IMAGE]</em></p>
+                </div>
+
+                <div class="text">
+                    <p>C’est alors qu’apparut une personne resplendissante de lumière.</p>
+                    <p><em>[???] : « Confie toi à moi et je viendrai à ton secours. »</em></p>
+                    <p><em>LA CREATURE, en murmurant : « La personne qui se trouve devant toi est hypocrite et
+                        égoïste. Tu ne pourras jamais compter sur elle. »</em></p>
+                </div>
+            </div>
+
+            <div class="vent-box">
+                <div class="text">
+                    <p><em>As-tu quelque-chose à exprimer ? C'est parfois important de mettre des mots sur ce que l'on ressent.</em></p>
+                    <p></p>
+                </div>
+                <div class="box-input">
+                    <textarea rows="18" cols="100">Aucune des informations confiées ne seront lues ou exploitées, mais tu peux toutefois charger cette page en navigation privée si tu le souhaites.</textarea>
+                    <div class="entrer">
+                        <button onclick="analyserTexteEtRediriger()" class="box-input">Entrer</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function analyserTexteEtRediriger() {
+                const textarea = document.querySelector('textarea');
+                const texte = textarea.value.trim();
+        
+                // Critères
+                const longueurMin = 20; // Nombre de caractères minimum
+                const motsInterdits = ["caca", "pipi", "prout", "nya", "neko", "feur", "baka", "quoicoubeh", "skibidi", "rizz", "desu", "ara", "oppai", "ochinchin", "djihad", "al qaida", "alquaida", "al quaida", "uwu", "owo", "sussy", "sugoi", "senpai", "onii-chan", "onii chan", "negro", "nègre", "nigga", "nigger", "pussy", "glor", "gawk", "glork", "négro","nigger", "nigga", "n1gger", "n1gga", "niqqer", "niqqa", "n!gger", "n!gga",
+    "n*gger", "n*gga", "n|gger", "n|gga", "n1gg4", "n1gg@", "nigg@", "nigg4",
+    "nïgger", "nìgger", "nîgger", "nígger", "nìggà", "nìggä", "n!gg3r", "n!gg3",
+    "n1gg3r", "n1gg3", "n¡gger", "n¡gga", "niga", "nicca", "nibba", "nygga",
+    "nygger", "nègre", "négro", "negro", "n3gr3", "n3gro", "n3gros", "négr0",
+    "négros", "nègr@", "nègros", "n!gro", "n!gr0", "n!gros", "n!gro$", "négr€",
+    "n3gr0", "nèg@", "n1gro", "négr4", "nigr0", "n1gr0", "négr€", "n1gr€"]; // Liste de mots inappropriés
+                const motsClés = [
+    // Tristesse
+    "trist", "déprim", "dépress", "mélancol", "échec", "raté", "rater", "afflig", 
+    "accabl", "courag", "perd", "perte", "condoléances", "deuil", "abattu", "seul", "solit", "abandon", "désol",
+    "isol", 
+    "rejet", "imposteur", "syndrome", "sans protection", "stimul", "dépass", "faibl", "déchet", "impuiss", 
+    "moqu", "adéquat", "valeur", "vaut", "vaux", "valait", "valu", "utile", "ridicul",
+    "plor", "désesp", 
+    "chagrin", "navr", "pein", "mal", "pitoy", "pitié", "pathétique", "misérable", 
+    "désillusion", "larm", "plaint", "écorché", "au bout du rouleau",
+    "déglingué", "paumé", "moche", "mal barré", "en vrac", "au trente-sixième dessous", "pleur",
+
+    // Peur
+    "peur", "inquiet", "inquiétude", "soucis", "angoisse", "crise", "angoissé", "effrayé", "frayeur", "appréhension", "appréhensif","terrible", "terreur", "terrifié", "horr", 
+    "mal à l’aise", "nerveux", "paniqué", "panique", "intimidé", "timide", "timidité", "vulnérable", 
+    "perturbé", "stupéfait", "perplexe", "ébranlé", "alarme", "alarmé", "craintif", "craint",
+    "redoutant", "doute", "paralysé", "paralysie", "paralys", "terrifiant", "troublé", "trouble", "problème", "frisson", "pétrifi", 
+    "timoré", "apeuré", "fébrile", "tendu", "tend", "sur le qui-vive", "flippé", "flippe", 
+    "crevé de trouille", "stressé", "stress", "anxieux", "anxiété", "sur les nerfs", "tremblant", "tremble", "choucard", "trouill",
+    "pleutre", "froussard", "frouss", "trouillard", "paniqué comme une souris", "paniqu", "au taquet", "mourrir", "mourir", "mort", "décès", "suicide", "tuer", "scarifi","creve", "crève", "meure", "sang", "veines", "pendre", "coupe", "emo", "émot", "sauter", "jeter", "clams", "toxiqu", "tirer une balle", "tire une balle", "balle dans la tête", "balle",
+
+    // Colère
+    "colère", "furieux", "énervé", "énerve", "trahi", "exaspéré", "exasp", "amer", "mépris",
+    "agressif", "aggress", "viol", "irrité", "irrit", "frustré", "frustr", "consterné", "constern", "insatisfait", "satisfa", "indigné", "indign",
+    "persécuté", "persécut", "belligérant", "hargneux", "hargn", "hors de moi", "enragé", "rage", "irascible",
+    "rageux", "vindicatif", "furibond", "tempétueux", "fulminant", "fulmin", "explosif", "explos",
+    "sanguin", "querelleur", "querelle", "révol", "rognon", "senti", "sens",
+    "bouill", "éclat", "défen", "fou", "hors de ", 
+    "vénère", "en pétard", "piqué", "grinch", "colérique", "dans le rouge", "rouge",
+    "soupe au lait", "ronchon", "sur les dents", "claqué", "marre", "j'en peux plus", "jpp",
+	"fatigue", "fatigué", "épuis", "furax", "claqu",
+ 
+    // Dégoût
+    "cœur", "révulsé", "coeur",
+    "scepti", "critiqu", "dubitatif", "blasé", "désappr", 
+    "diff", "distant", "déconcerté", "repouss", "scandal", 
+    "ignoble", "abject", "répugnant", "nausé", "infect", "moral", 
+    "désobligeant", "réprobateur", "odieux", "troublant", 
+    "suspect", "cyni", "sarcastique", "immond", "pouah", 
+    "berk", "beurk", "affreux", "infâme", "gore", "gerb", 
+    "vomir", "propre", "abomina", "flippant", "dégueu", "deg", "dég",
+
+    // Gêne
+    "gêne", "confus", "hont", "timid", "embarrass", "à l’aise", "mal",
+    "mortif", "ridicul", "troublé", "coincé", "décontenancé", "désorienté", 
+    "petit", "humilié", "déconfit", "crispé", "timide", "incertain", "gêné", 
+    "emprunté", "mal assuré", "piégé", "inconfortable", "cloué sur place", 
+    "complexé", "tourmenté", "désolé", "retenu", "pantois", "dépité", 
+    "désarmé", "foutu", "empêtré", "paniqué", "frigorifié", "bloqué", 
+    "stressé", "bouche bée", "tendu", "désemparé",
+
+    // Joie
+    "joie", "heureux", "content", "joyeux", "épanoui", "radieux", 
+    "enthousiaste", "optimiste", "exalté", "fier", "reconnaissant", 
+    "transporté", "excité", "ébloui", "émerveillé", "gonflé à bloc",
+    "allègre", "euphorique", "ravi", "éclatant", "jubilant", "béat", 
+    "hilarant", "exubérant", "réjoui", "flottant sur un nuage", "comblé", 
+    "satisfait", "épanoui", "harmonieux", "paix intérieure", "jouissif", 
+    "heureux comme un roi", "content comme un pape", "au paradis", "dans les nuages", 
+    "joyeux drille", "pété de joie", "aux anges", "explosé de bonheur",
+
+    // Amour
+    "amour", "affectionné", "aimant", "intime", "chaleureux", "tendre", 
+    "compatissant", "proche", "dévoué", "adorateur", "chéri", "protecteur", 
+    "attentif", "passionné", "amoureux", "solidaire", "fusionnel", "rassurant", 
+    "bienveillant", "altruiste", "proche", "romantique", "caressant", "éperdu", 
+    "désintéressé", "fidèle", "empathique", "sacrificiel", "complice", 
+    "à fond", "tombé sous le charme", "doux", "mignon", "craquant",
+
+    // Surprise
+    "surprise", "étonné", "surpris", "stupéfait", "sidéré", "émerveillé", 
+    "intrigué", "choqué", "curieux", "déconcerté", "perplexe", 
+    "déboussolé", "fasciné", "décontenancé", "bluffé", "abasourdi", 
+    "ahuri", "inattendu", "effaré", "éberlué", "époustouflé", "estomaqué", 
+    "choqué", "baba", "sur le cul", "soufflé", "halluciné", "sous le choc", 
+    "frappé d’étonnement", "envoûté", "hypnotisé"
+]; // Mots liés aux émotions
+        
+                // Vérification de la longueur minimale
+                if (texte.length < longueurMin) {
+                    alert("C'est tout ? Tu me déçois.");
+                    window.location.href = "mere.html"; // Redirection si texte pas pertinent
+                    return;
+                }
+        
+                // Vérification des mots interdits
+                for (const mot of motsInterdits) {
+                    if (texte.toLowerCase().includes(mot)) {
+                        alert("Tu me déçois.");
+                        window.location.href = "mere.html"; // Redirection vers mere.html
+                        return;
+                    }
+                }
+        
+                // Analyse des mots-clés émotionnels
+                let motsClésTrouvés = 0;
+                for (const mot of motsClés) {
+                    if (texte.toLowerCase().includes(mot)) {
+                        motsClésTrouvés++;
+                    }
+                }
+        
+                if (motsClésTrouvés > 0 ) {
+                    window.location.href = "pere.html"; // Redirection vers pere.html
+                } else if (texte.length > longueurMin) {
+                    alert("...")
+                    window.location.href = "pere.html";
+                }
+                    
+                else {
+                    alert("ok.");
+                    window.location.href = "mere.html"; // Redirection vers mere.html
+                }
+            }
+        </script>
+        <footer>
+            <div >
+                <p class="para_footer">Copyright &copy; Eaux Troubles - 2024 - All Rights reserved</p>
+            </div>
+        </footer>
+    </body>
+</html>

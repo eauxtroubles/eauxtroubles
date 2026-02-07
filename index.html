@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Eaux Troubles</title>
+        <link rel="stylesheet" href="index_style.css">
+        <link rel="shortcut icon" type="image/x-icon" href="imgs/favicon2.ico" />
+        <script src="audio_index.js" defer></script>
+    </head>
+    <body>
+        <div id="header">
+            <nav>
+            <div id="audio-container"><img src="imgs/noSound_new.png" id="audio-icon"></div>
+            <ul id="menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="about.html">À propos d'Eaux Troubles</a></li>
+                <li><a href="support.html">Soutenir le projet</a></li>
+            </ul>
+            <audio hidden loop>
+                <source src="audio/menu theme __.mp3">
+            </audio>
+            </nav>
+        </div>
+        
+        <div id="top">
+            <h1 id="title">EAUX TROUBLES</h1>
+            <div class="music">
+
+                <!-- ici mettre le son et tout genre la musique
+                 musique ou pas for the start page ??? -->
+            
+            </div>
+        </div>
+
+        <!-- start button -->
+        <div class="container">
+            <div class="center_img">
+                <!-- CHANGE IMG LATER -->
+                <img src="imgs/start_img4.png" id="cover" width="40%"> <!--width="400" height="500"-->
+                <div class="overlay-buttons">
+                    <!-- Formulaire pour choisir le chaptitre auquel le lecteur était rendu
+                    -> faire un SYSTEME DE SAUVEGARDE à la homestuck plus tard -->
+                    
+                    
+                    <!-- PROGRAMME JS POUR SELECTION DES CHAPITRES -->
+                    <form name="choixPt">
+                        <!--<label for="parts">-->
+                        <select name="parts">
+                            <!--<option value="Intro">Intro</option>-->
+                            <option value="suffocation1.html">Partie 1 - Suffocation</option>
+                            <option value="reve1.html">Partie 2 - Songe</option>
+                            <option value="submersion.html">Partie 3 - Submersion</option>
+                        </select>
+                        <!--</label>-->
+                    </form>
+                    <!-- start button -->
+                    <button id="start" aria-label="START">PLONGER</button>
+                </div>
+            </div>
+        </div>
+        <div class="tw container" style="padding-bottom: 7%;">
+            <a href="warning.html" style="text-align: center;">Trigger Warnings/Mises en garde</a>
+        </div>
+
+        <script>
+            document.getElementById('start').addEventListener('click',function(){
+                const selectedValue = document.forms['choixPt'].parts.value;
+                window.location.href= selectedValue;
+            });
+        </script>
+
+        <footer>
+            <div >
+                <p class="para_footer">Copyright &copy; Eaux Troubles - 2024 - All Rights reserved</p>
+            </div>
+        </footer>
+    </body>
+</html>
