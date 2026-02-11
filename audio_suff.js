@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if(isMuted== "false"){
             audio.play();   // Réactive le son
             audio.muted = false;  
-            audioIcon.src = "imgs/new_sound.png";
+            audioIcon.src = "imgs/new_sound.webp";
             console.log("muted, start condition : ",isMuted);
         }
     }
@@ -36,13 +36,13 @@ document.addEventListener("DOMContentLoaded", function() {
             if(isMuted == "true")
             {
                 audio.play();       // Démarre l'audio au premier clic
-                audioIcon.src = "imgs/new_sound.png";
+                audioIcon.src = "imgs/new_sound.webp";
                 sessionStorage.setItem('audioEnabled', 'true');
                 isMuted = "false";
             }
             else{
                 audio.muted = true
-                audioIcon.src = "imgs/noSound_new.png";
+                audioIcon.src = "imgs/noSound_new.webp";
                 isMuted = "true";
             }
             isFirstClick = false;
@@ -51,13 +51,13 @@ document.addEventListener("DOMContentLoaded", function() {
         } else {
             if (isMuted=="true") {
                 audio.muted = false;  // Réactive le son
-                audioIcon.src = "imgs/new_sound.png";
+                audioIcon.src = "imgs/new_sound.webp";
                 isMuted = "false";
                 console.log("active son ", isMuted)
             } 
             else {
                 audio.muted = true;   // Coupe le son
-                audioIcon.src = "imgs/noSound_new.png";
+                audioIcon.src = "imgs/noSound_new.webp";
                 isMuted = "true";
                 console.log("coupe son ",isMuted)
             }

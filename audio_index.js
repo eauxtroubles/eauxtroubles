@@ -18,17 +18,17 @@ document.addEventListener("DOMContentLoaded", function() {
             audio.play();       // Démarre l'audio au premier clic
             sessionStorage.setItem('audioEnabled', 'true');
             console.log(sessionStorage.getItem('audioEnabled'));
-            audioIcon.src = "imgs/new_sound.png";
+            audioIcon.src = "imgs/new_sound.webp";
             isFirstClick = false;
             isMuted = false;
         } else {
             if (isMuted) {
                 audio.muted = false;  // Réactive le son
-                audioIcon.src = "imgs/new_sound.png";
+                audioIcon.src = "imgs/new_sound.webp";
                 isMuted = false;
             } else {
                 audio.muted = true;   // Coupe le son
-                audioIcon.src = "imgs/noSound_new.png";
+                audioIcon.src = "imgs/noSound_new.webp";
                 isMuted = true;
             }
         }
